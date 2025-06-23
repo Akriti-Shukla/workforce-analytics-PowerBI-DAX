@@ -1,10 +1,15 @@
-# Workforce Analytics with DAX in Power BI
+## Workforce Analytics with DAX in Power BI
 
 This project is a detailed demonstration of workforce analytics using Power BI with a star schema data model. 
 It includes four dimension tables and one fact table. 
 Using DAX functions, I derived actionable insights, KPIs, and visualizations for HR and operational decision-making.
 
 ---
+
+### DAX functions for Workforce Analytics
+
+![DAX functions for staff data analysis](https://github.com/user-attachments/assets/c382740d-a4e6-4342-82c8-d15b78670ddc)
+
 
 ## 📈 Data Model
 
@@ -107,6 +112,17 @@ DATEDIFF(DimEmployee[HireDate], TODAY(), YEAR)
 
 Insight: Measures how long each employee has been with the company. 
 This helps in understanding employee retention trends and recognizing long-tenured staff.
+
+
+
+![Staff Data Visualization](https://github.com/user-attachments/assets/181a4835-c873-4ba7-a9e1-12b958ade452)
+
+
+
+
+![Staff Data Analysis](https://github.com/user-attachments/assets/a43f57d8-9899-431d-b5e6-843203ca6285)
+
+
 
 #### This Power BI project demonstrates how DAX can be applied to workforce-related data for generating meaningful HR and operational insights. The metrics and modeling in this report serve as a strong portfolio piece for any data analyst focused on people analytics or business intelligence.
 
