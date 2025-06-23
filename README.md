@@ -56,11 +56,58 @@ AVERAGEX(
     CALCULATE(SUM(FactEmployeePerformance[WorkHours]))
 )
 ```
+Insight: Helps compare average working hours across departments. 
+This can highlight departments where staff might be overworked, underutilized, or optimally staffed.
 
+### 2. **Employee Efficiency Score**
 
+```dax
 EfficiencyScore = 
 DIVIDE(
     SUM(FactEmployeePerformance[TasksCompleted]),
     SUM(FactEmployeePerformance[WorkHours])
 )
+```
+Insight: Measures how efficiently employees complete tasks based on time spent. 
+It can assist in identifying top performers and potential productivity gaps.
+
+### 3. **Average Salary by Role**
+
+```dax
+AvgSalaryByRole = 
+CALCULATE(
+    AVERAGE(FactEmployeePerformance[Salary]),
+    ALLEXCEPT(DimRole, DimRole[RoleName])
+)
+```
+
+Insight: Evaluates average compensation per role, helping HR assess pay parity and 
+compensation alignment across job functions.
+
+
+### 4. **Error Rate by Department**
+
+```dax
+ErrorRate = 
+DIVIDE(
+    SUM(FactEmployeePerformance[ErrorsMade]),
+    SUM(FactEmployeePerformance[TasksCompleted])
+)
+```
+Insight: Calculates how often errors are made relative to completed tasks. 
+This metric can guide training needs or identify process inefficiencies in specific departments.
+
+
+### 5. **Tenure of Employee**
+
+```dax
+Tenure = 
+DATEDIFF(DimEmployee[HireDate], TODAY(), YEAR)
+```
+
+Insight: Measures how long each employee has been with the company. 
+This helps in understanding employee retention trends and recognizing long-tenured staff.
+
+#### This Power BI project demonstrates how DAX can be applied to workforce-related data for generating meaningful HR and operational insights. The metrics and modeling in this report serve as a strong portfolio piece for any data analyst focused on people analytics or business intelligence.
+
 
